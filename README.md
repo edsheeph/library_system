@@ -1,6 +1,6 @@
-# Enrollment Management
+# User Management
 
-Enrollment management is effectively management of the administrative tasks involved in the admission process for schools. Using technology such as an admissions software.
+User management describes the ability for administrators to manage user access to various IT resources like systems, devices, applications, storage systems, networks, SaaS services, and more. ... User management enables admins to control user access and on-board and off-board users to and from IT resources.
 
 ## Installation
 
