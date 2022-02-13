@@ -43,7 +43,7 @@ Follow these steps to install the system for development purposes:
 
 7. Run the migrations:
 	```sh
-	php artisan migrate:fresh
+	php artisan migrate
 	```
 
 8. Run the laravel passport
