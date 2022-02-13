@@ -1,14 +1,6 @@
-# School Management
-> A web-based school management system that covers admission to graduation.
+# Enrollment Management
 
-A web-based school management system for colleges and universities. It contains modules from applicant admission to student graduation. To be specific, here are the modules included in this project:
-
-* Admission Module
-* System Managment
-* Enrollment Module
-* Grading System Module
-* Faculty Evaluation
-* Security Management
+Enrollment management is effectively management of the administrative tasks involved in the admission process for schools. Using technology such as an admissions software
 
 ## Installation
 
@@ -34,29 +26,29 @@ Follow these steps to install the system for development purposes:
 	```sh
 	composer install
 	```
-
-3. Install the npm libraries:
-	```sh
-	npm install
-	```
 	
-4. Make a ``.env`` file using the ``.env.example`` and change your local configuration for DB, APP_URL, and DOMAIN.
+3. Make a ``.env`` file using the ``.env.example`` and change your local configuration for DB, APP_URL, and DOMAIN.
 
-5. Create a database with the name you specified in ``.env`` file and use ``utf8mb4_unicode_ci`` collation.collation.
+4. Create a database with the name you specified in ``.env`` file and use ``utf8mb4_unicode_ci`` collation.collation.
 
-6. Run the migrations:
+5. Run the optimize command:
+	```sh
+	php artisan optimize
+	```
+
+6. Generate app key
+	```sh
+	php artisan key:generate
+	```
+
+7. Run the migrations:
 	```sh
 	php artisan migrate:fresh
 	```
-	
-7. Run the default tables' data:
-	```sh
-	php artisan db:seed --class=CoreDatabaseSeeder
-	```
 
-8. Generate app key
+8. Run the laravel passport
 	```sh
-	php artisan key:generate
+	php artisan passport:install
 	```
 		
 9. Run the laravel project:
@@ -64,46 +56,4 @@ Follow these steps to install the system for development purposes:
 	php artisan serve
 	```
 
-9. Compile the project views:
-	```sh
-	npm run dev
-	or
-	npm run watch
-	```
-
 10. Start the development and Happy Coding!
-
-## Testing Data
-
-Run this command to add test data on the system:
-```sh
-php artisan db:seed --class=TestDatabaseSeeder
-```
-
-## Code of Conduct
-
-It contains the coding standards of the project and expectations on how to interact with others using git. See ``CODE OF CONDUCT`` for more information.
-
-[https://github.com/mamangss/sms/CODE_OF_CONDUCT.md](/CODE_OF_CONDUCT.md) 
-
-## Release History
-
-* 0.0.1
-	* Work in progress
-
-## Meta
-
-* Andre S. Laurio - [Hyperstorm321](https://github.com/Hyperstorm321) - ict.alaurio@gmail.com
-* Joshua A. Mamangun – [mamangss](https://github.com/mamangss) - mamangunjoshua@gmail.com
-
-Distributed under the [] license. See ``LICENSE`` for more information.
-
-[https://github.com/mamangss/sms](https://github.com/mamangss/sms)
-
-## Contributing
-
-1. Fork it (<https://github.com/mamangss/sms/fork>)
-2. Create your feature branch (`git checkout -b feature/foo-bar`)
-3. Commit your changes (`git commit -am 'Add some foo-bar'`)
-4. Push to the branch (`git push origin feature/foo-bar`)
-5. Create a new Pull Request
