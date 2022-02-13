@@ -36,7 +36,7 @@ Follow these steps to install the system for development purposes:
 	php artisan optimize
 	```
 
-6. Generate app key
+6. Generate app key:
 	```sh
 	php artisan key:generate
 	```
@@ -46,7 +46,7 @@ Follow these steps to install the system for development purposes:
 	php artisan migrate
 	```
 
-8. Run the laravel passport
+8. Run the laravel passport:
 	```sh
 	php artisan passport:install
 	```
@@ -56,4 +56,4 @@ Follow these steps to install the system for development purposes:
 	php artisan serve
 	```
 
-10. Start the development and Happy Coding!
+10. Start the development.
