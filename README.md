@@ -1,6 +1,6 @@
 # Enrollment Management
 
-Enrollment management is effectively management of the administrative tasks involved in the admission process for schools. Using technology such as an admissions software
+Enrollment management is effectively management of the administrative tasks involved in the admission process for schools. Using technology such as an admissions software.
 
 ## Installation
 
