@@ -1,6 +1,6 @@
-# User Management
+# Library System
 
-User management describes the ability for administrators to manage user access to various IT resources like systems, devices, applications, storage systems, networks, SaaS services, and more. ... User management enables admins to control user access and on-board and off-board users to and from IT resources.
+An integrated library system (ILS), also known as a library management system (LMS), is an enterprise resource planning system for a library, used to track items owned, orders made, bills paid, and patrons who have borrowed.
 
 ## Installation
 
