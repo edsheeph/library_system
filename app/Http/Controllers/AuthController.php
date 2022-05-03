@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Validator;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -10,15 +11,26 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
     public function signup(Request $request){
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|string|unique:users',
+        $validator = Validator::make($request->all(), [
+            'last_name' => 'required',
+            'first_name' => 'required',
+            'username' => 'required',
             'password' => 'required|string|confirmed'
         ]);
 
+        if ($validator->fails()) {
+            return customResponse()
+                ->data(null)
+                ->message($validator->errors()->all()[0])
+                ->failed()
+                ->generate();
+        }
+
         $userData = new User([
-            'name' => $request->name,
-            'email' => $request->email,
+            'last_name' => $request->last_name,
+            'first_name' => $request->first_name,
+            'middle_name' => $request->middle_name,
+            'username' => $request->username,
             'password' => bcrypt($request->password)
         ]);
 
@@ -32,13 +44,20 @@ class AuthController extends Controller
     }
 
     public function login(Request $request){
-        $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
-            'remember_me' => 'boolean'
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|string',
+            'password' => 'required|string'
         ]);
 
-        $credentials = request(['email', 'password']);
+        if ($validator->fails()) {
+            return customResponse()
+                ->data(null)
+                ->message($validator->errors()->all()[0])
+                ->failed()
+                ->generate();
+        }
+
+        $credentials = request(['username', 'password']);
         if (!Auth::attempt($credentials)) {
             return customResponse()
                 ->message('Unauthorized')
